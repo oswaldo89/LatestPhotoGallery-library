@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:last="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingBottom="2dp"
+    android:paddingLeft="2dp"
+    android:paddingRight="2dp"
+    android:paddingTop="2dp">
+
+    <Button
+        android:id="@+id/BtnObtain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Obtener Imagenes seleccionadas" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#71a7c7"
+        android:orientation="vertical"
+        android:padding="5dp">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="¿Quieres publicar una foto reciente?"
+            android:textColor="#FFFFFF" />
+    </LinearLayout>
+
+    <com.oswaldogh89.library.LatestImages
+        android:id="@+id/customControl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        last:quantity="15">
+
+    </com.oswaldogh89.library.LatestImages>
+
+
+</LinearLayout>
