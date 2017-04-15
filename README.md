@@ -46,6 +46,18 @@ El siguiente parametro indica cuantas imagenes se visualizaran.
 last:quantity="15
 ```
 
+Por ultimo Instanciamos el control en nuestra activity o fragment
+
+```java
+LatestImages images = (LatestImages) findViewById(R.id.customControl);
+```
+
+Y con el siguiente metodo mandamos llamar las imagenes que fueron seleccionadas.
+
+```java
+ArrayList<Image> im = images.getSelectedImages();
+```
+
 NOTA: En el proyecto, puede verse un ejemplo de su implementacion.
 
 
