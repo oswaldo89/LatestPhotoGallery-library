@@ -101,8 +101,4 @@ public class LatestImages extends LinearLayout {
     private boolean isValidImage(String path) {
         return path.toUpperCase().contains(".JPG") || path.toUpperCase().contains(".JPGE") || path.toUpperCase().contains(".PNG") || path.toUpperCase().contains(".GIF") || path.toUpperCase().contains(".BMP");
     }
-
-    public void setListSize(int number) {
-        this.mImagesNumber = number;
-    }
 }

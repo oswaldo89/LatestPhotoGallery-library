@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class MainActivity extends Activity {
     public final int MY_PERMISSIONS_REQUEST_READ_MEDIA = 123;
     public LatestImages images;
+    private Boolean HasPermission = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,14 +29,16 @@ public class MainActivity extends Activity {
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, MY_PERMISSIONS_REQUEST_READ_MEDIA);
         } else {
             images = (LatestImages) findViewById(R.id.customControl);
-            images.setListSize(10);
+            HasPermission = true;
         }
 
         Button BtnObtain = (Button) findViewById(R.id.BtnObtain);
         BtnObtain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ArrayList<Image> im = images.getSelectedImages();
+                if (HasPermission) {
+                    ArrayList<Image> im = images.getSelectedImages();
+                }
             }
         });
     }
@@ -46,7 +49,7 @@ public class MainActivity extends Activity {
             case MY_PERMISSIONS_REQUEST_READ_MEDIA:
                 if ((grantResults.length > 0) && (grantResults[0] == PackageManager.PERMISSION_GRANTED)) {
                     images = (LatestImages) findViewById(R.id.customControl);
-                    images.setListSize(10);
+                    HasPermission = true;
                 }
                 break;
             default:
