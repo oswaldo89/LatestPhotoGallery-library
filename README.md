@@ -43,7 +43,7 @@ Despues Agregamos el control a nuestra vista
 
 El siguiente parametro indica cuantas imagenes se visualizaran.
 ```xml
-last:quantity="15
+last:quantity="15"
 ```
 
 Por ultimo Instanciamos el control en nuestra activity o fragment
